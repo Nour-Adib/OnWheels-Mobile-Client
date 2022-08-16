@@ -24,6 +24,4 @@ class RegistrationScreenController extends GetxController {
   isRegister() {
     return selectedButton.contains(register);
   }
-
-  reAssignHeight() {}
 }

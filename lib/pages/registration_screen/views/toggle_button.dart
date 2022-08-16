@@ -69,7 +69,7 @@ class ToggleButton extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  c.setSelection(c.signIn);;
+                  c.setSelection(c.signIn);
                 },
                 child: Container(
                   height: 50,
