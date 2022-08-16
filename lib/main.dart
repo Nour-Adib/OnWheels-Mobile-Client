@@ -1,7 +1,9 @@
-import 'package:bike_sale/ui/registration_screen/registration_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:bike_sale/ui/splash_screen/splash_screen.dart';
+
+import 'pages/registration_screen/views/registration_screen.dart';
+import 'pages/splash_screen/views/splash_screen.dart';
 
 void main() => runApp(
       GetMaterialApp(

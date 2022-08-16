@@ -9,6 +9,8 @@ class ToggleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final RegistrationScreenController c = Get.find();
 
+    c.initialize();
+
     return Container(
       padding: const EdgeInsets.all(3.0),
       height: 60,
@@ -22,7 +24,7 @@ class ToggleButton extends StatelessWidget {
             offset: const Offset(0, 1), // changes position of shadow
           ),
         ],
-        color: const Color(0xFFE9ECF4),
+        color: const Color(0xFFBCC8D3),
       ),
       child: Obx(
         () => IntrinsicWidth(
@@ -31,19 +33,20 @@ class ToggleButton extends StatelessWidget {
             children: [
               InkWell(
                 onTap: () {
-                  c.selectedButton.value = <String>[];
-                  c.add(c.register);
+                  c.setSelection(c.register);
                 },
                 child: Container(
                   height: 50,
+                  width: c.width.value * 0.3,
                   padding: const EdgeInsets.symmetric(
                     vertical: 10,
                     horizontal: 20,
                   ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
-                    color:
-                        c.isRegister() ? Colors.blue : const Color(0xFFE9ECF4),
+                    color: c.isRegister()
+                        ? const Color(0xFF293F73)
+                        : const Color(0xFFBCC8D3),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -66,20 +69,23 @@ class ToggleButton extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  c.selectedButton.value = <String>[];
-                  c.add(c.signIn);
+                  c.setSelection(c.signIn);;
                 },
                 child: Container(
                   height: 50,
+                  width: c.width.value * 0.3,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
-                    color: c.isSignIn() ? Colors.blue : const Color(0xFFE9ECF4),
+                    color: c.isSignIn()
+                        ? const Color(0xFF293F73)
+                        : const Color(0xFFBCC8D3),
                   ),
                   padding: const EdgeInsets.symmetric(
                     vertical: 10,
                     horizontal: 20,
                   ),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(
                         'SignIn',

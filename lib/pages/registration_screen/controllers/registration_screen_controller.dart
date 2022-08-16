@@ -2,12 +2,18 @@ import 'package:get/get.dart';
 
 class RegistrationScreenController extends GetxController {
   var selectedButton = <String>[].obs;
-  var width = Get.width;
+  var width = Get.width.obs;
   var height = Get.height.obs;
+
   String register = 'Register';
   String signIn = 'SignIn';
 
-  add(String item) {
+  initialize() {
+    selectedButton.add(register);
+  }
+
+  setSelection(String item){
+    selectedButton.clear();
     selectedButton.add(item);
   }
 
@@ -18,4 +24,6 @@ class RegistrationScreenController extends GetxController {
   isRegister() {
     return selectedButton.contains(register);
   }
+
+  reAssignHeight() {}
 }
